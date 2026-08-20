@@ -22,16 +22,20 @@ dependencies = [
   "python-dotenv>=1.0.1",
   "typer>=0.15.1",
   "rich>=13.9.4",
+  "fastapi>=0.115.6",
+  "uvicorn>=0.34.0",
 ]
 
 [project.optional-dependencies]
 dev = [
   "pytest>=8.3.4",
   "pytest-mock>=3.14.0",
+  "httpx>=0.28.1",
 ]
 
 [project.scripts]
 ai-agent = "ai_agent.cli:app"
+ai-agent-api = "uvicorn ai_agent.api:app"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ai_agent"]
